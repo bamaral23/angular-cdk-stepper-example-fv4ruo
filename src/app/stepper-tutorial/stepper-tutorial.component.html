@@ -1,0 +1,59 @@
+<div class="intro">
+  <h1>Angular CDK Stepper Example</h1>
+  <p>
+    The CDK Stepper aims to provide basic functionality for a stepper / form wizard, such as selecting and displaying
+    the currently
+    active step.
+  </p>
+
+  <h2>Where are the docs?</h2>
+  <p>
+    There IS an example on the material page, it's just in a bad place. Here it is: <b><a href="https://material.angular.io/guide/creating-a-custom-stepper-using-the-cdk-stepper" target="_blank">https://material.angular.io/guide/creating-a-custom-stepper-using-the-cdk-stepper</a></b>
+    ...
+  </p>
+
+  <h2>How to get it running?</h2>
+  <ol>
+    <li>
+      Install <code>@angular/cdk</code> and add <code>CdkStepperModule</code> to your module.
+    </li>
+    <li>
+      Create a component <code>my-comp</code> that extends <code>CdkStepper</code>. In this component, you should:
+      <ul>
+        <li>Provide a footer / header for the general overview over the steps</li>
+        <li>Provide the possibilty to navigate in the header / footer (next / back buttons)</li>
+        <li><b>Add <code>[ngTemplateOutlet]="selected.content"</code> somewhere. The cdkStep will be projected there...</b>
+        </li>
+      </ul>
+    </li>
+    <li>
+      Add code <code>app-my-comp</code> with <code>cdk-step</code>'s inside
+    </li>
+  </ol>
+
+  <h2>What features does the stepper have?</h2>
+  <ul>
+    <li>
+      Displaying only the active step. When <code>this.selectedIndex</code> is changed, the the new step is displayed.
+    </li>
+    <li>
+      Exposing some properties of the steps:
+      <ul>
+        <li>
+          selectedIndex (can be set and get)
+        </li>
+        <li>steps (info about the steps)</li>
+      </ul>
+    </li>
+    <li>
+      Working stepper with just some html for the actual step, no typescript required.
+    </li>
+    <li>
+      A "linear mode", where you can only progress if you have completed previous steps. Also integrates well with forms (I think).
+    </li>
+  </ul>
+  <h2>Where is the code of this page?!</h2>
+  <p>
+    On Stackblitz, at <b><a href="https://stackblitz.com/edit/angular-cdk-stepper-example" target="_blank">https://stackblitz.com/edit/angular-cdk-stepper-example</a></b>!
+  </p>
+</div>

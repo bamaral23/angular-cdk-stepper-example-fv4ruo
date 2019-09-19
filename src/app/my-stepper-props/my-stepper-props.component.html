@@ -1,0 +1,23 @@
+<section class="container">
+	<header>
+		<h2>Step {{selectedIndex + 1}}/{{steps.length}}</h2>
+		<div>
+			<button class="pure-button" cdkStepperPrevious>&larr;</button><button class="pure-button" cdkStepperNext>&rarr;</button>
+    </div>
+  </header>
+
+  <!-- Content from the CdkStep is projected here -->
+  <div class="step">
+    <ng-container [ngTemplateOutlet]="selected.content"></ng-container>  
+  </div>
+
+  <pre>// this.selectedIndex
+{{selectedIndex}}</pre>
+
+  <pre>// this.steps (parts of it)
+{{printSteps() | json}}</pre>
+
+  <pre>// this.selected (parts of it): shortcut for this.steps[this.selectedIndex]
+{{printSelected() | json}}</pre>
+
+</section>
